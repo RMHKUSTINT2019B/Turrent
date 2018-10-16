@@ -1,0 +1,6 @@
+[submodule "ChibiOS"]
+	path = ChibiOS
+	url = https://github.com/RMHKUSTINT2019B/ChibiOS.git
+[submodule "CxxRT"]
+	path = CxxRT
+	url = https://github.com/RMHKUSTINT2019B/CxxRT.git
