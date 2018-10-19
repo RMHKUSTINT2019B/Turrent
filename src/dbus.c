@@ -15,7 +15,7 @@ static thread_reference_t uart_dbus_thread_handler = NULL;
 
 static rc_state_t rc_state = RC_UNCONNECTED;
 
-#define UART_DBUS                     &UARTD2
+#define UART_DBUS                     &UARTD1
 
 /**
  * @brief   Decode the received DBUS sequence and store it in RC_Ctl struct
@@ -111,7 +111,6 @@ static THD_FUNCTION(uart_dbus_thread, p) {
  */
 void RC_init(void) {
     RC_reset();
-UARTD2
     uartStart(UART_DBUS, &uart_cfg);
     dmaStreamRelease(*UART_DBUS.dmatx);
 
