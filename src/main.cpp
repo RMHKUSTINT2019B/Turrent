@@ -23,11 +23,11 @@
  */
 
 
-#include "chstd.hpp"
 #include "hal.h"
+#include "chstd.hpp"
+#include "dbus.h"
 
 extern "C" {
-#include "dbus.h"
 #include "canBusProcess.h"
 }
 
@@ -65,6 +65,7 @@ int main() {
     RC_init();
     can_processInit();
     for(;;) {
+        uartStartSend(&UARTD1, 14, "Hello World!\n");
         chstd::this_thread::sleep_for(std::chrono::hours(1));
     }
 }
